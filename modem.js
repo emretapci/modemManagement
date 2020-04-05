@@ -368,11 +368,27 @@ const setDeviceName = (mac, name) => {
 }
 
 const enableDevice = async mac => {
-	const filters = await getMacFilters();
+	const index = state.disabled.indexOf(mac);
+	if (index >= 0) {
+		state.disabled = state.disabled.splice(0, index).concat(state.disabled.splice(index + 1));
+		return await setMacFilters({
+			mac: state.disabled,
+			days: '03:00-03:01'
+		});
+	}
+	return false;
 }
 
 const disableDevice = async mac => {
-
+	const index = state.disabled.indexOf(mac);
+	if (index < 0) {
+		state.disabled.push(mac);
+		return await setMacFilters({
+			mac: state.disabled,
+			days: '03:00-03:01'
+		});
+	}
+	return false;
 }
 
 getDevices().then(devices => {

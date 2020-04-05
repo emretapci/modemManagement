@@ -1,0 +1,130 @@
+{
+	"cookie": "Ejslyrl5NleM8jgRcUjlazF6R86bnNEzxCu4D9KAGcNH3i80lbCRxPiX4mqvSKGDrPG09Q7Xd4A7y0CBkEFcFhblos788Jb7AoflFz5zRQ8AfI9qhKcZ0fpcjCk9tpVi",
+	"devices": [
+		{
+			"hostname": "emre-desktop-Ethernet",
+			"mac": "34:97:F6:2B:1F:CB"
+		},
+		{
+			"hostname": "android-3e2868fbb8470ca3-Ethernet",
+			"mac": "AC:9B:0A:31:65:04"
+		},
+		{
+			"hostname": "android-2c3ff550d152ec49-Wireless",
+			"mac": "74:4A:A4:6B:79:B4",
+			"name": "Emre ZTE cell phone"
+		},
+		{
+			"hostname": "6C-EF-C6-6F-C2-27-Ethernet",
+			"mac": "6C:EF:C6:6F:C2:27",
+			"name": "Superonline TV"
+		},
+		{
+			"hostname": "emre-laptop-Wireless",
+			"mac": "28:C6:3F:79:A7:20"
+		},
+		{
+			"hostname": "DESKTOP-J0DSUE1-Wireless",
+			"mac": "C8:F7:33:5B:31:05"
+		},
+		{
+			"hostname": "AyseEsraiPhoneu-Wireless",
+			"mac": "BC:6C:21:AD:E2:18"
+		},
+		{
+			"hostname": "Ayse-Esra-iPadi-Wireless",
+			"mac": "4C:32:75:80:78:21"
+		},
+		{
+			"hostname": "Galaxy-J5-2016-Ethernet",
+			"mac": "88:83:22:83:2F:4E"
+		},
+		{
+			"hostname": "iPhone-Wireless",
+			"mac": "98:10:E8:61:3E:EA"
+		},
+		{
+			"hostname": "Static-74-C6-3B-AE-FB-D8-Wireless",
+			"mac": "74:C6:3B:AE:FB:D8"
+		},
+		{
+			"hostname": "HUAWEI_P20_lite-60ce1a5c7-Wireless",
+			"mac": "74:C1:4F:B1:86:E5"
+		},
+		{
+			"hostname": "Emine-Wireless",
+			"mac": "CC:2D:B7:12:E7:30"
+		},
+		{
+			"hostname": "MI5s-MiTelefon-Wireless",
+			"mac": "C4:0B:CB:86:A3:6B"
+		},
+		{
+			"hostname": "F6-88-94-44-CE-C8-Wireless",
+			"mac": "F6:88:94:44:CE:C8"
+		},
+		{
+			"hostname": "BedirhaciPhoneu-Wireless",
+			"mac": "CC:20:E8:93:68:D7"
+		},
+		{
+			"hostname": "Galaxy-J7-2016-Ethernet",
+			"mac": "70:28:8B:C5:7A:4F"
+		},
+		{
+			"hostname": "MI9TransparentEditio-Wireless",
+			"mac": "D8:CE:3A:FB:87:10"
+		},
+		{
+			"hostname": "oem-Bilgisayar-Wireless",
+			"mac": "C0:18:85:97:78:3F"
+		},
+		{
+			"hostname": "raspberrypi-Ethernet",
+			"mac": "B8:27:EB:4A:C6:CD"
+		},
+		{
+			"hostname": "raspberrypi-Ethernet",
+			"mac": "B8:27:EB:4D:66:1B"
+		},
+		{
+			"hostname": "raspberrypi-Ethernet",
+			"mac": "B8:27:EB:1F:93:98"
+		},
+		{
+			"hostname": "Static-B8-27-EB-18-33-4E-Ethernet",
+			"mac": "B8:27:EB:18:33:4E"
+		},
+		{
+			"hostname": "Static-78-6A-89-00-FD-91-Ethernet",
+			"mac": "78:6A:89:00:FD:91"
+		},
+		{
+			"hostname": "emre-virtual-Ethernet",
+			"mac": "08:00:27:5E:BA:67"
+		},
+		{
+			"hostname": "raspberrypi-Ethernet",
+			"mac": "B8:27:EB:42:EC:2A"
+		},
+		{
+			"hostname": "raspberrypi-Ethernet",
+			"mac": "B8:27:EB:17:B9:7F"
+		},
+		{
+			"hostname": "1C-CC-D6-45-4C-57-Wireless",
+			"mac": "1C:CC:D6:45:4C:57"
+		},
+		{
+			"hostname": "emre-VirtualBox-Ethernet",
+			"mac": "08:00:27:7B:44:03"
+		},
+		{
+			"hostname": "DESKTOP-J0DSUE1-Ethernet",
+			"mac": "50:B7:C3:8D:09:5B"
+		}
+	],
+	"disabled": [
+		"6C:EF:C6:6F:C2:27"
+	]
+}

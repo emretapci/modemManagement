@@ -47,7 +47,7 @@ body:
 }
 ```
 
-## PUT /enable
+## PUT /disable
 disable a device  
 body:  
 ```
