@@ -348,6 +348,16 @@ const getDevices = async () => {
 				.map(device => ({ hostname: device.HostName, mac: device.MACAddress }));
 			const devicesFromState = state.devices;
 			let devicesMerged = devicesFromState.concat(devicesRead.filter(device => !devicesFromState.find(device2 => device2.mac == device.mac)));
+			devicesMerged.sort((d1, d2) => {
+				if (d1.name && !d2.name)
+					return -1;
+				else if (!d1.name && d2.name)
+					return 1;
+				else if (d1.name && d2.name)
+					return (d1.name < d2.name) ? -1 : 1;
+				else
+					return (d1.hostname < d2.hostname) ? -1 : 1;
+			});
 			state.devices = devicesMerged;
 			fs.writeFileSync(stateFileName, JSON.stringify(state, null, '\t'));
 			resolve(state.devices);
