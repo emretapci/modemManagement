@@ -1,13 +1,15 @@
 {
-	"cookie": "DHMTG0TxLLApJjMbFftisHbsrWzwzIeiRCtA68qp5PNjEXvkLb3v1Z5JX0bggwvLqcxa4VvwNW3sQN3kST35A0W9l3Q0O3HE6ZBNhHhV89MGLFGyAtFfNEw428Eo6S00",
+	"cookie": "t7CVH1j7sB103PrDdD5Br56O0thomPp4yxrwDjG7RFwFHSd10JMS23uPee2UqRq00SlD7gwGaWnpBPKgpemnxwG23Q0U4GpQ5eQD910FhzGqIaxoE0vs08z05xphvRDh",
 	"devices": [
 		{
 			"hostname": "emre-desktop-Ethernet",
-			"mac": "34:97:F6:2B:1F:CB"
+			"mac": "34:97:F6:2B:1F:CB",
+			"name": "Emre Desktop"
 		},
 		{
 			"hostname": "android-3e2868fbb8470ca3-Ethernet",
-			"mac": "AC:9B:0A:31:65:04"
+			"mac": "AC:9B:0A:31:65:04",
+			"name": "Sony TV"
 		},
 		{
 			"hostname": "android-2c3ff550d152ec49-Wireless",
@@ -21,7 +23,8 @@
 		},
 		{
 			"hostname": "emre-laptop-Wireless",
-			"mac": "28:C6:3F:79:A7:20"
+			"mac": "28:C6:3F:79:A7:20",
+			"name": "Emre Asus Laptop"
 		},
 		{
 			"hostname": "DESKTOP-J0DSUE1-Wireless",
@@ -33,7 +36,8 @@
 		},
 		{
 			"hostname": "Ayse-Esra-iPadi-Wireless",
-			"mac": "4C:32:75:80:78:21"
+			"mac": "4C:32:75:80:78:21",
+			"name": "Esra iPad"
 		},
 		{
 			"hostname": "Galaxy-J5-2016-Ethernet",
@@ -113,7 +117,8 @@
 		},
 		{
 			"hostname": "1C-CC-D6-45-4C-57-Wireless",
-			"mac": "1C:CC:D6:45:4C:57"
+			"mac": "1C:CC:D6:45:4C:57",
+			"name": "Esra Xiaomi cell phone"
 		},
 		{
 			"hostname": "emre-VirtualBox-Ethernet",
