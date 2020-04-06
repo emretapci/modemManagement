@@ -58,3 +58,6 @@ body:
 }
 ```
 
+# Dockerize
+
+`docker build --tag modem-man . && docker run --name modem-man -p 3001:3001 -d modem-man`
