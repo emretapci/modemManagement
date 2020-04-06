@@ -1,5 +1,5 @@
 {
-	"cookie": "Ejslyrl5NleM8jgRcUjlazF6R86bnNEzxCu4D9KAGcNH3i80lbCRxPiX4mqvSKGDrPG09Q7Xd4A7y0CBkEFcFhblos788Jb7AoflFz5zRQ8AfI9qhKcZ0fpcjCk9tpVi",
+	"cookie": "DHMTG0TxLLApJjMbFftisHbsrWzwzIeiRCtA68qp5PNjEXvkLb3v1Z5JX0bggwvLqcxa4VvwNW3sQN3kST35A0W9l3Q0O3HE6ZBNhHhV89MGLFGyAtFfNEw428Eo6S00",
 	"devices": [
 		{
 			"hostname": "emre-desktop-Ethernet",
@@ -124,7 +124,5 @@
 			"mac": "50:B7:C3:8D:09:5B"
 		}
 	],
-	"disabled": [
-		"6C:EF:C6:6F:C2:27"
-	]
+	"disabled": []
 }

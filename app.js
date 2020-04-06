@@ -10,6 +10,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: 'application/json', limit: '500kb' }));
 
+app.use(express.static('./public'));
+
 app.get('/devices', async (req, res) => {
 	res.status(200).json(await modem.getDevices());
 });
