@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: 'application/json', limit: '500kb' }));
 
-app.use(express.static('./public'));
+app.use('/', express.static('./public'));
 
 app.get('/devices', async (req, res) => {
 	res.status(200).json(await modem.getDevices());
@@ -40,13 +40,6 @@ app.put('/enable', async (req, res) => {
 
 app.put('/disable', async (req, res) => {
 	res.status(200).json(await modem.disableDevice(req.body.mac));
-});
-
-app.use((err, req, res) => {
-	res.locals.message = err.message;
-	res.locals.error = req.app.get('env') === 'development' ? err : {};
-	res.status(err.status || 500);
-	res.render('error');
 });
 
 const start = () => app.listen(process.env.PORT ? process.env.PORT : 4001);
