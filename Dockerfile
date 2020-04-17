@@ -10,6 +10,6 @@ RUN git clone https://github.com/emretapci/modemManagement && \
 	npm i
 COPY --from=frontendBuilder /modemManagementFrontend/build /modemManagement/public
 WORKDIR /modemManagement
-EXPOSE 3001
+EXPOSE 4001
 
 CMD ["npm", "start"]

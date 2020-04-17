@@ -49,6 +49,6 @@ app.use((err, req, res) => {
 	res.render('error');
 });
 
-const start = () => app.listen(process.env.PORT ? process.env.PORT : 3001);
+const start = () => app.listen(process.env.PORT ? process.env.PORT : 4001);
 
 module.exports = { start };
