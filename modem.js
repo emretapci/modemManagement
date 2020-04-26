@@ -403,8 +403,10 @@ const disableDevice = async mac => {
 
 getDevices().then(devices => {
 	getMacFilters().then(filter => {
-		state.disabled = filter.mac;
-		fs.writeFileSync(stateFileName, JSON.stringify(state, null, '\t'));
+		if (filter != null) {
+			state.disabled = filter.mac;
+			fs.writeFileSync(stateFileName, JSON.stringify(state, null, '\t'));
+		}
 	});
 });
 

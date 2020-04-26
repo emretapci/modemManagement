@@ -2,7 +2,9 @@
 Backend API for HUAWEI HG255s modem management.  
 Manages Internet access of devices on the LAN.  
 To start as a docker container, in the project directory, simply run:  
-`docker build --no-cache --tag modem-man . && docker run --restart always --name modem-man -p 4001:4001 -d modem-man`
+```
+docker build --no-cache --tag modem-man . && docker run --restart always --name modem-man -p 4001:4001 -d modem-man
+```
 and access the application from any device on the LAN from `http://<hostIP>:4001`
 
 # API
