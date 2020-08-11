@@ -410,11 +410,68 @@ getDevices().then(devices => {
 	});
 });
 
+const reboot = async () => {
+	const cookie = await getCookie();
+	return new Promise(async resolve => {
+		axios({
+			method: 'post',
+			url: 'http://192.168.1.1/api/service/reboot.cgi',
+			headers: {
+				'Accept': 'application/json, text/javascript, */*; q=0.01',
+				'Accept-Encoding': 'gzip, deflate',
+				'Accept-Language': 'en-US,en;q=0.9',
+				'Connection': 'keep-alive',
+				'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+				'Cookie': `SessionID_R3=${cookie}`,
+				'Host': '192.168.1.1',
+				'Origin': 'http://192.168.1.1',
+				'Referer': 'http://192.168.1.1/html/advance.html',
+				'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36',
+				'X-Requested-With': 'XMLHttpRequest'
+			},
+			data: {
+				csrf: await getCsrfTokens(cookie)
+			}
+
+		}).then(response => {
+			resolve(response);
+		});
+	});
+}
+
+const getExternalIp = async () => {
+	const cookie = await getCookie();
+	return new Promise((resolve, reject) => {
+		axios({
+			method: 'get',
+			url: 'http://192.168.1.1/api/system/firstupwan',
+			headers: {
+				'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+				'Accept-Encoding': 'gzip, deflate',
+				'Accept-Language': 'en-US,en;q=0.9',
+				'Cache-Control': 'max-age=0',
+				'Connection': 'keep-alive',
+				'Cookie': `SessionID_R3=${cookie}`,
+				'Host': '192.168.1.1',
+				'Upgrade-Insecure-Requests': '1',
+				'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36'
+			}
+		}).then(response => {
+			const params = JSON.parse(response.data.match(/\/\*(.+)\*\//)[1]);
+			resolve(params.ExternalIPAddress);
+		});
+	});
+}
+
+reboot().then(res => console.log(res));
+
 module.exports = {
 	getDevices,
 	getMacFilters,
 	setMacFilters,
 	enableDevice,
 	disableDevice,
-	setDeviceName
+	setDeviceName,
+	reboot,
+	getExternalIp
 }

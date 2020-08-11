@@ -42,6 +42,10 @@ app.put('/disable', async (req, res) => {
 	res.status(200).json(await modem.disableDevice(req.body.mac));
 });
 
+app.get('/reboot', async (req, res) => {
+	res.status(200).json(await modem.reboot());
+});
+
 const start = () => app.listen(process.env.PORT ? process.env.PORT : 4001);
 
 module.exports = { start };
