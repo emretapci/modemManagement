@@ -6,5 +6,7 @@ services:
     image: modem-man
     container_name: modem-man
     hostname: modem-man
+    ports:
+      - "4001:4001"
     volumes:
       - /d/projeler/my/modemManagement/logs/:/modemManagement/logs/
