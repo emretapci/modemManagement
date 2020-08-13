@@ -12,7 +12,7 @@ const rebootRequired = async () => {
 	return externalIPModem != externalIPReal;
 }
 
-setInterval(async () => {
+const check = async () => {
 	const rebootReq = await rebootRequired();
 	if (rebootReq) {
 		fs.appendFileSync('./logs/log.txt', `[${new Date().toString()}] Rebooting modem.\n`);
@@ -21,4 +21,8 @@ setInterval(async () => {
 	else {
 		fs.appendFileSync('./logs/log.txt', `[${new Date().toString()}] Checked IPs, same.\n`);
 	}
-}, 60000 * 5);
+}
+
+setInterval(check, 60000 * 5);
+
+check();
