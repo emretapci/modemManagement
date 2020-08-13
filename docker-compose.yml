@@ -1,0 +1,10 @@
+version: '3.4'
+services:
+  modem:
+    build:
+      context: ./
+    image: modem-man
+    container_name: modem-man
+    hostname: modem-man
+    volumes:
+      - /d/projeler/my/modemManagement/logs/:/modemManagement/logs/

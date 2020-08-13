@@ -3,6 +3,8 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const modem = require('./modem');
 
+require('./checkIP');
+
 const app = express();
 
 app.use(cors({ credentials: true, origin: true }));

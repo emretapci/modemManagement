@@ -463,8 +463,6 @@ const getExternalIp = async () => {
 	});
 }
 
-reboot().then(res => console.log(res));
-
 module.exports = {
 	getDevices,
 	getMacFilters,
