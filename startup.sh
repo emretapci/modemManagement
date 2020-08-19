@@ -1,6 +1,6 @@
 #!/bin/bash
 if [ -e modemManagement ]
-then cd modemManagement && git pull
+then cd modemManagement && git reset --hard && git pull
 else git clone https://github.com/emretapci/modemManagement && cd modemManagement
 fi
 npm i
