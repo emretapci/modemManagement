@@ -3,6 +3,7 @@ services:
   modem:
     build:
       context: ./
+    restart: always
     image: modem-man
     container_name: modem-man
     hostname: modem-man
