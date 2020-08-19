@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const modem = require('./modem');
+const checkIP = require('./checkIP');
 
 require('./checkIP');
 
@@ -47,6 +48,10 @@ app.put('/disable', async (req, res) => {
 app.get('/reboot', async (req, res) => {
 	res.status(200).json(await modem.reboot());
 });
+
+app.get('/reboots', (req, res) => {
+	res.status(200).json(checkIP.reboots());
+})
 
 const start = () => app.listen(process.env.PORT ? process.env.PORT : 4001);
 

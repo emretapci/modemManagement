@@ -2,6 +2,8 @@ const axios = require('axios');
 const fs = require('fs');
 const modem = require('./modem');
 
+const filename = './logs/log.txt';
+
 const rebootRequired = async () => {
 	const res = await axios({
 		method: 'get',
@@ -15,11 +17,17 @@ const rebootRequired = async () => {
 const check = async () => {
 	const rebootReq = await rebootRequired();
 	if (rebootReq) {
-		fs.appendFileSync('./logs/log.txt', `[${new Date().toString()}] Rebooting modem.\n`);
+		fs.appendFileSync(filename, Date.now() + '\n');
 		modem.reboot();
 	}
+}
+
+const reboots = () => {
+	return fs.readFileSync(filename).split('\n');
 }
 
 setInterval(check, 60000 * 5);
 
 check();
+
+module.exports = { reboots }
