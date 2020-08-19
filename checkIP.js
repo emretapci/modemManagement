@@ -23,7 +23,7 @@ const check = async () => {
 }
 
 const reboots = () => {
-	return fs.readFileSync(filename).toString().split('\n').map(epoch => new Date(epoch));
+	return fs.readFileSync(filename).toString().split('\n').map(epoch => new Date(epoch)).filter(date => date != null);
 }
 
 setInterval(check, 60000 * 5);
