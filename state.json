@@ -12,9 +12,9 @@
 			"name": "Emre Desktop"
 		},
 		{
-			"hostname": "android-2c3ff550d152ec49-Wireless",
-			"mac": "74:4A:A4:6B:79:B4",
-			"name": "Emre ZTE cell phone"
+			"hostname": "RedmiNote8Pro-emrexi-Wireless",
+			"mac": "E0:CC:F8:3C:07:3E",
+			"name": "Emre Xiaomi cell phone"
 		},
 		{
 			"hostname": "1C-CC-D6-45-4C-57-Wireless",
@@ -35,6 +35,11 @@
 			"hostname": "6C-EF-C6-6F-C2-27-Ethernet",
 			"mac": "6C:EF:C6:6F:C2:27",
 			"name": "Superonline TV"
+		},
+		{
+			"hostname": "android-2c3ff550d152ec49-Wireless",
+			"mac": "74:4A:A4:6B:79:B4",
+			"name": "Emre ZTE cell phone"
 		},
 		{
 			"hostname": "AyseEsraiPhoneu-Wireless",
@@ -87,10 +92,6 @@
 		{
 			"hostname": "MI9TransparentEditio-Wireless",
 			"mac": "D8:CE:3A:FB:87:10"
-		},
-		{
-			"hostname": "RedmiNote8Pro-emrexi-Wireless",
-			"mac": "E0:CC:F8:3C:07:3E"
 		},
 		{
 			"hostname": "Static-60-E3-27-80-21-B8-Ethernet",
