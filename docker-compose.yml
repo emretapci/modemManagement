@@ -10,4 +10,4 @@ services:
     ports:
       - "4001:4001"
     volumes:
-      - /d/projeler/my/modemManagement/logs/:/modemManagement/logs/
+      - /d/projeler/my/modemManagement/logs/:/logs/

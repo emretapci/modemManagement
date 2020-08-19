@@ -1,5 +1,5 @@
 {
-	"cookie": "zl47FpLImVv1E9XfXSEu9VhpEfWrov8vQFP4zudY8IB00daOCaGPE7C66vv0SUoAvRu4Z4AOAkVatnOCI784oIolGdBLMRvKqdFVhz8ap30Gsd00MsoZg9TuGy7Jrfir",
+	"cookie": "eGS2ntxnzAbWvshg0OZRULknte0Q0kqSVZa6xhxt4gbuxIHhyCsoLRs4AV0rUp8bHykWLlMjoPKOaYGlc27skCu7aG1XoyVwEX5ZmJcFQpU41gxIB02IvLHuYivLeCCq",
 	"devices": [
 		{
 			"hostname": "emre-laptop-Wireless",
@@ -157,7 +157,5 @@
 			"mac": "B8:27:EB:17:B9:7F"
 		}
 	],
-	"disabled": [
-		"CC:20:E8:93:68:D7"
-	]
+	"disabled": []
 }

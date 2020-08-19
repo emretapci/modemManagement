@@ -1,0 +1,30 @@
+span.button {
+	background-color: blue;
+	min-height: 50px;
+	display: flex;
+	flex-direction: column;
+	color: white;
+	margin: 10px;
+	vertical-align: middle;
+	text-align: center;
+	font-family: 'Consolas';
+	cursor: pointer;
+}
+
+span.deviceName {
+	color: orange;
+	font-weight: bold;
+	font-size: 1.3em;
+}
+
+span.pending {
+	background-color: gray;
+}
+
+span.restricted {
+	background-color: red;
+}
+
+span.free {
+	background-color: green;
+}

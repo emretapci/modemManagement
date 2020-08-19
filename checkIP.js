@@ -2,7 +2,7 @@ const axios = require('axios');
 const fs = require('fs');
 const modem = require('./modem');
 
-const filename = './logs/log.txt';
+const filename = '../logs/log.txt';
 
 const rebootRequired = async () => {
 	const res = await axios({

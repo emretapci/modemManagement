@@ -1,6 +1,5 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const cors = require('cors');
 const modem = require('./modem');
 const checkIP = require('./checkIP');
 
@@ -8,12 +7,11 @@ require('./checkIP');
 
 const app = express();
 
-app.use(cors({ credentials: true, origin: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: 'application/json', limit: '500kb' }));
 
-app.use('/', express.static('./public'));
+app.use('/', express.static('./frontend/build'));
 
 app.get('/devices', async (req, res) => {
 	res.status(200).json(await modem.getDevices());
