@@ -18,9 +18,6 @@ const check = async () => {
 		fs.appendFileSync('./logs/log.txt', `[${new Date().toString()}] Rebooting modem.\n`);
 		modem.reboot();
 	}
-	else {
-		fs.appendFileSync('./logs/log.txt', `[${new Date().toString()}] Checked IPs, same.\n`);
-	}
 }
 
 setInterval(check, 60000 * 5);
