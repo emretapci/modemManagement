@@ -2,6 +2,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const modem = require('./modem');
 const checkIP = require('./checkIP');
+const axios = require('axios')
+const htmlParser = require('node-html-parser');
+const fs = require('fs');
 
 require('./checkIP');
 
@@ -49,7 +52,30 @@ app.get('/reboot', async (req, res) => {
 
 app.get('/reboots', (req, res) => {
 	res.status(200).json(checkIP.reboots());
-})
+});
+
+app.get('/finance', async (req, res) => {
+	const financeData = JSON.parse(fs.readFileSync('/data/finance.json'));
+
+	const html = await axios({
+		method: 'get',
+		url: 'https://www.qnbfinansbank.enpara.com/hesaplar/doviz-ve-altin-kurlari'
+	});
+
+	const usd = parseFloat(htmlParser.parse(html.data).querySelector('div.enpara-gold-exchange-rates__table').childNodes[3].childNodes[2].structuredText.match('\\d+,\\d+')[0].replace(',', '.'));
+	const eur = parseFloat(htmlParser.parse(html.data).querySelector('div.enpara-gold-exchange-rates__table').childNodes[5].childNodes[2].structuredText.match('\\d+,\\d+')[0].replace(',', '.'));
+	const xau = parseFloat(htmlParser.parse(html.data).querySelector('div.enpara-gold-exchange-rates__table').childNodes[7].childNodes[2].structuredText.match('\\d+,\\d+')[0].replace(',', '.'));
+
+	const cost = financeData.cost;
+	const amount = financeData.amount;
+
+	res.status(200).json({
+		USD: usd,
+		EUR: eur,
+		XAU: xau,
+		profit: (usd - cost.usd) * amount.usd + (eur - cost.eur) * amount.eur + (xau - cost.xau) * amount.xau
+	});
+});
 
 const start = () => app.listen(process.env.PORT ? process.env.PORT : 4001);
 
