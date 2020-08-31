@@ -70,9 +70,18 @@ app.get('/finance', async (req, res) => {
 	const amount = financeData.amount;
 
 	res.status(200).json({
-		USD: usd,
-		EUR: eur,
-		XAU: xau,
+		cost: {
+			USD: cost.usd,
+			EUR: cost.eur,
+			XAU: cost.xau,
+			total: cost.usd * amount.usd + cost.eur * amount.eur + cost.xau * amount.xau
+		},
+		current: {
+			USD: usd,
+			EUR: eur,
+			XAU: xau,
+			total: usd * amount.usd + eur * amount.eur + xau * amount.xau
+		},
 		profit: (usd - cost.usd) * amount.usd + (eur - cost.eur) * amount.eur + (xau - cost.xau) * amount.xau
 	});
 });
