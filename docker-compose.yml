@@ -1,6 +1,6 @@
 version: '3.4'
 services:
-  modem:
+  homeutils:
     build:
       context: ./
     restart: always
