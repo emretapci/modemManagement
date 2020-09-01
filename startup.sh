@@ -1,7 +1,7 @@
 #!/bin/bash
-if [ -e modemManagement ]
-then cd modemManagement && git reset --hard && git pull
-else git clone https://github.com/emretapci/modemManagement && cd modemManagement
+if [ -e homeutils ]
+then cd homeutils && git reset --hard && git pull
+else git clone https://github.com/emretapci/homeutils && cd homeutils
 fi
 npm i
 cd frontend

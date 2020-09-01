@@ -4,11 +4,11 @@ services:
     build:
       context: ./
     restart: always
-    image: modem-man
-    container_name: modem-man
-    hostname: modem-man
+    image: homeutils
+    container_name: homeutils
+    hostname: homeutils
     ports:
       - "4001:4001"
     volumes:
-      - /d/projeler/my/modemManagement/logs/:/logs/
-      - /d/projeler/my/modemManagement/data/:/data/
+      - /d/projeler/my/homeutils/logs/:/logs/
+      - /d/projeler/my/homeutils/data/:/data/
