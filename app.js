@@ -55,7 +55,7 @@ app.get('/reboots', (req, res) => {
 });
 
 app.get('/finance', async (req, res) => {
-	const financeData = JSON.parse(fs.readFileSync('./data/finance.json'));
+	const financeData = JSON.parse(fs.readFileSync('/data/finance.json'));
 
 	const html = await axios({
 		method: 'get',
