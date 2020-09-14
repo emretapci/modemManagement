@@ -55,7 +55,7 @@ app.get('/reboots', (req, res) => {
 });
 
 app.get('/finance', async (req, res) => {
-	const financeData = JSON.parse(fs.readFileSync('/data/finance.json'));
+	const financeData = JSON.parse(fs.readFileSync('./data/finance.json'));
 
 	const html = await axios({
 		method: 'get',
@@ -66,8 +66,27 @@ app.get('/finance', async (req, res) => {
 	const eur = parseFloat(htmlParser.parse(html.data).querySelector('div.enpara-gold-exchange-rates__table').childNodes[5].childNodes[2].structuredText.match('\\d+,\\d+')[0].replace(',', '.'));
 	const xau = parseFloat(htmlParser.parse(html.data).querySelector('div.enpara-gold-exchange-rates__table').childNodes[7].childNodes[2].structuredText.match('\\d+,\\d+')[0].replace(',', '.'));
 
-	const cost = financeData.cost;
-	const amount = financeData.amount;
+	const totalTL = financeData.map(fd => ({
+		usd: (fd.cost.usd || 0) * (fd.amount.usd || 0),
+		eur: (fd.cost.eur || 0) * (fd.amount.eur || 0),
+		xau: (fd.cost.xau || 0) * (fd.amount.xau || 0)
+	})).reduce((p, c) => ({
+		usd: p.usd + c.usd,
+		eur: p.eur + c.eur,
+		xau: p.xau + c.xau
+	}), { usd: 0, eur: 0, xau: 0 });
+
+	const amount = financeData.reduce((p, c) => ({
+		usd: p.usd + (c.amount.usd || 0),
+		eur: p.eur + (c.amount.eur || 0),
+		xau: p.xau + (c.amount.xau || 0)
+	}), { usd: 0, eur: 0, xau: 0 });
+
+	const cost = ({
+		usd: totalTL.usd / amount.usd,
+		eur: totalTL.eur / amount.eur,
+		xau: totalTL.xau / amount.xau
+	})
 
 	res.status(200).json({
 		cost: {
