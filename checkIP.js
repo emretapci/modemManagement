@@ -26,8 +26,8 @@ const reboots = () => {
 	return fs.readFileSync(filename).toString().split('\n').filter(str => str != '').map(epoch => new Date(parseInt(epoch)));
 }
 
-setInterval(check, 60000 * 5);
+//setInterval(check, 60000 * 5);
 
-check();
+//check();
 
 module.exports = { reboots }
