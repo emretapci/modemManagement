@@ -91,7 +91,7 @@ const summary = async () => {
 		altın: await getPrices('altın')
 	}
 
-	let curreny = ['USD', 'EUR', 'GBP'];
+	let currency = ['* USD', '* EUR', '* GBP', 'enpara Altın', 'ziraat A01', 'ziraat A02'];
 	let liquidGold = [
 		'Has Altın Toptan',
 		'Külçe Altın Toptan',
@@ -129,7 +129,8 @@ const summary = async () => {
 	else
 		return {
 			toplam: financeData.reduce((total, asset) => total + (prices[asset.bank].filter(price => price.type === asset.type)[0] || { buy: 0 }).buy * asset.amount, 0).toFixed(2),
-			döviz: financeData.filter(asset => curreny.filter(type => asset.type == type).length > 0).reduce((total, asset) => total + (prices[asset.bank].filter(price => price.type === asset.type)[0] || { buy: 0 }).buy * asset.amount, 0).toFixed(2),
+			döviz: financeData.filter(asset => currency.filter(cur => (cur.split(' ')[0] === '*' || cur.split(' ')[0] === asset.bank) && cur.split(' ')[1] === asset.type).length > 0)
+				.reduce((total, asset) => total + (prices[asset.bank].filter(price => price.type === asset.type)[0] || { buy: 0 }).buy * asset.amount, 0).toFixed(2),
 			yatırımAltını: financeData.filter(asset => liquidGold.filter(type => asset.type == type).length > 0).reduce((total, asset) => total + (prices[asset.bank].filter(price => price.type === asset.type)[0] || { buy: 0 }).buy * asset.amount, 0).toFixed(2),
 			ziynetAltını: financeData.filter(asset => otherGold.filter(type => asset.type == type).length > 0).reduce((total, asset) => total + (prices[asset.bank].filter(price => price.type === asset.type)[0] || { buy: 0 }).buy * asset.amount, 0).toFixed(2),
 		}
